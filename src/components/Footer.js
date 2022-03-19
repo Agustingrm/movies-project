@@ -7,6 +7,7 @@ const FooterStyles = styled.footer`
   padding: 10px;
   width: 100%;
   text-align: center;
+  /* margin-top: auto; */
 `;
 
 export default function Footer() {

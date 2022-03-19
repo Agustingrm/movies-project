@@ -7,14 +7,14 @@ const DivStyles = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
   gap: 20px;
-  max-width: 1000px;
   padding: 20px;
   margin: 20px;
   justify-self: center;
   .gatsby-image-wrapper {
-    width: 100%;
+    object-fit: contain;
+    margin: auto;
   }
   h2 {
     margin-bottom: 1rem;
@@ -28,15 +28,23 @@ const DivStyles = styled.div`
   p {
     color: white;
   }
+  i {
+    font-weight: bold;
+  }
   .plot {
     margin-bottom: 0.5rem;
+  }
+  .cast {
+    margin: 0.5rem 0;
+  }
+  @media all and (max-width: 800px) {
+    grid-template-columns: 1fr;
   }
 `;
 
 export default function SingleMoviePage({ data: { movie } }) {
-  console.log(movie);
-  console.log(movie.overview[0].children[0].text);
   const image = getImage(movie.poster.asset);
+  console.log(movie.castMembers);
   return (
     <DivStyles>
       <GatsbyImage image={image} alt={movie.title} />
@@ -45,6 +53,14 @@ export default function SingleMoviePage({ data: { movie } }) {
         <h3>Release Year: ({new Date(movie.releaseDate).getFullYear()})</h3>
         <p className="plot">Plot </p>
         <p>{movie.overview[0].children[0].text}</p>
+        <p className="cast">Cast </p>
+        {movie.castMembers.map((character) => {
+          return (
+            <p key={character.person.id}>
+              {character.person.name} as <i>{character.characterName}</i>
+            </p>
+          );
+        })}
       </div>
     </DivStyles>
   );
@@ -63,6 +79,10 @@ export const query = graphql`
       popularity
       castMembers {
         characterName
+        person {
+          id
+          name
+        }
       }
       crewMembers {
         department

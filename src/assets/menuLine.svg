@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlnsDc="http://purl.org/dc/elements/1.1/"
+   xmlnsCc="http://creativecommons.org/ns#"
+   xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlnsSvg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlnsSodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlnsInkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="13.229167mm"
+   height="1.00001mm"
+   viewBox="0 0 13.229167 1.00001"
+   version="1.1"
+   id="svg8"
+   inkscapeVersion="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodiDocname="menuLine.svg">
+  <defs
+     id="defs2" />
+  <sodipodiNamedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscapePageopacity="0.0"
+     inkscapePageshadow="2"
+     inkscapeZoom="0.98994949"
+     inkscapeCx="-37.033458"
+     inkscapeCy="97.682219"
+     inkscapeDocument-units="mm"
+     inkscapeCurrent-layer="layer1"
+     inkscapeDocument-rotation="0"
+     showgrid="false"
+     inkscapeWindow-width="1258"
+     inkscapeWindow-height="728"
+     inkscapeWindow-x="78"
+     inkscapeWindow-y="0"
+     inkscapeWindow-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdfRDF>
+      <ccWork
+         rdfAbout="">
+        <dcFormat>image/svg+xml</dcFormat>
+        <dcType
+           rdfResource="http://purl.org/dc/dcmitype/StillImage" />
+        <dcTitle></dcTitle>
+      </ccWork>
+    </rdfRDF>
+  </metadata>
+  <g
+     inkscapeLabel="Capa 1"
+     inkscapeGroupmode="layer"
+     id="layer1"
+     transform="translate(-58.39732,-150.52902)">
+    <rect
+       y="150.52902"
+       width="13.229167"
+       height="1.00001"
+       fill="#ffffff"
+       stroke-width="0.264583"
+       id="rect12"
+       x="58.39732"
+       style="fill:#ffffff" />
+  </g>
+</svg>

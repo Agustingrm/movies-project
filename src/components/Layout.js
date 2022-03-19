@@ -6,9 +6,12 @@ import styled from "styled-components";
 
 const LayoutStyles = styled.div`
   min-height: 100vh;
+  width: 100%;
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  /* display: flex;
+  flex-direction: column; */
 `;
 
 export default function Layout({ children }) {
@@ -17,7 +20,7 @@ export default function Layout({ children }) {
       <GlobalStyles />
       <LayoutStyles>
         <Nav />
-        {children}
+        <>{children}</>
         <Footer />
       </LayoutStyles>
     </>
