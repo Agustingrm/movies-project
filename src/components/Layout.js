@@ -10,8 +10,6 @@ const LayoutStyles = styled.div`
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  /* display: flex;
-  flex-direction: column; */
 `;
 
 export default function Layout({ children }) {
@@ -20,7 +18,7 @@ export default function Layout({ children }) {
       <GlobalStyles />
       <LayoutStyles>
         <Nav />
-        <>{children}</>
+        {children}
         <Footer />
       </LayoutStyles>
     </>

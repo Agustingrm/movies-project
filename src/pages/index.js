@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 const SectionStyles = styled.section`
+  margin: 1rem;
   h2 {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
@@ -12,7 +13,6 @@ const SectionStyles = styled.section`
     margin-bottom: 1rem;
     padding: 0.5rem;
   }
-  margin: 1rem;
   div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -46,7 +46,6 @@ const SectionStyles = styled.section`
 
 const IndexPage = ({ data }) => {
   const screenings = data.screening.nodes;
-  console.log(screenings);
   return (
     <SectionStyles>
       <h2>Now in our Theater!</h2>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MenuLinesStyles = styled.div`
   display: none;
-  @media all and (max-width: 959px) {
+  @media all and (max-width: 800px) {
     display: block;
     position: absolute;
     right: 10px;

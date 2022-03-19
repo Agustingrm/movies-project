@@ -14,7 +14,7 @@ const NavStyles = styled.nav`
   h1 {
     position: relative;
     background-color: var(--black);
-    z-index: 3;
+    z-index: 10;
     a {
       position: relative;
       z-index: 3;
@@ -51,24 +51,33 @@ const NavStyles = styled.nav`
     position: relative;
     z-index: 2;
   }
+  .up {
+    transform: translateY(0);
+    transition-duration: 0.3s;
+  }
+  .down {
+    transform: translateY(230px);
+    transition-duration: 0.3s;
+  }
   @media all and (max-width: 800px) {
     flex-direction: column;
     padding-right: 0;
     ul {
       position: relative;
+      z-index: 2;
       top: -168px;
       flex-direction: column;
       margin-left: 0;
-      z-index: 2;
       height: 0;
-      li {
+      a {
         background-color: var(--black);
         width: 100%;
-        text-align: center;
-        position: relative;
-        z-index: 2;
-        a {
-          margin: 5px auto;
+        padding: 5px 0;
+        li {
+          display: inline-block;
+          margin: auto;
+          width: 100%;
+          text-align: center;
         }
       }
     }
@@ -93,14 +102,12 @@ export default function Nav() {
   const [rotationTop, setRotationTop] = useState({});
   const [rotationMiddle, setRotationMiddle] = useState({});
   const [rotationBottom, setRotationBottom] = useState({});
-  const [menuMovement, setMenuMovement] = useState({});
 
   const resetAnimations = () => {
     setRotationTop({});
     setRotationBottom({});
     setRotationMiddle({});
-    setMenuMovement({});
-    setTimeout(() => setMenu(false), 300);
+    setMenu(false);
   };
 
   const handleMenuClick = () => {
@@ -110,7 +117,6 @@ export default function Nav() {
       setRotationTop({ rotate: 45, x: 0, y: 11 });
       setRotationBottom({ rotate: 45, x: 0, y: -11 });
       setRotationMiddle({ rotate: -45 });
-      setMenuMovement({ y: 230 });
       setMenu(true);
     }
   };
@@ -142,26 +148,20 @@ export default function Nav() {
           transition={{ type: "tween" }}
         />
       </MenuLinesStyles>
-      <motion.ul animate={menu ? menuMovement : ""} transition={{ type: "tween", duration: 0.3 }}>
+      <ul className={menu ? "down" : "up"}>
         <hr />
-        <li>
-          <Link to="/" onClick={resetAnimations}>
-            Screening
-          </Link>
-        </li>
+        <Link to="/" onClick={resetAnimations}>
+          <li>Screening</li>
+        </Link>
         <hr />
-        <li>
-          <Link to="/movies" onClick={resetAnimations}>
-            Movies
-          </Link>
-        </li>
+        <Link to="/movies" onClick={resetAnimations}>
+          <li>Movies</li>
+        </Link>
         <hr />
-        <li>
-          <Link to="/cast-and-crew" onClick={resetAnimations}>
-            Cast & Crew
-          </Link>
-        </li>
-      </motion.ul>
+        <Link to="/cast-and-crew" onClick={resetAnimations}>
+          <li>Cast & Crew</li>
+        </Link>
+      </ul>
     </NavStyles>
   );
 }
