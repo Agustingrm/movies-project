@@ -51,14 +51,6 @@ const NavStyles = styled.nav`
     position: relative;
     z-index: 2;
   }
-  .up {
-    transform: translateY(0);
-    transition-duration: 0.3s;
-  }
-  .down {
-    transform: translateY(230px);
-    transition-duration: 0.3s;
-  }
   @media all and (max-width: 800px) {
     flex-direction: column;
     padding-right: 0;
@@ -85,6 +77,14 @@ const NavStyles = styled.nav`
       display: block;
       width: 100%;
     }
+    .up {
+      transform: translateY(0);
+      transition-duration: 0.3s;
+    }
+    .down {
+      transform: translateY(230px);
+      transition-duration: 0.3s;
+    }
   }
   @media all and (max-width: 500px) {
     h1 {
@@ -98,7 +98,7 @@ const NavStyles = styled.nav`
 `;
 
 export default function Nav() {
-  const [menu, setMenu] = useState(true);
+  const [menu, setMenu] = useState(false);
   const [rotationTop, setRotationTop] = useState({});
   const [rotationMiddle, setRotationMiddle] = useState({});
   const [rotationBottom, setRotationBottom] = useState({});
